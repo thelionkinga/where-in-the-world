@@ -1,10 +1,10 @@
 # where-in-the-world
 
-GROUP 6 (TRAVEL)  AGENDA ​
-Game Run-through​
-Structure &design  ​
-Enter Player Name ​
-DOM Method ​
-Timer ​
-Code Examples ( right, wrong , times-up)​
-Sound​ // not working // 
+xx GROUP 6 (TRAVEL)  AGENDA ​
+xx Game Run-through​
+xx Structure &design  ​
+xx Enter Player Name ​
+xx DOM Method ​
+xx Timer ​
+xx Code Examples ( right, wrong, times-up)​
+xx Sound​ // not working // 
