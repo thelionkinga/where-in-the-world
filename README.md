@@ -1,6 +1,6 @@
 # where-in-the-world
 
-xx GROUP 6 (TRAVEL)  AGENDA ​
+xx GROUP 6 (TRAVEL) AGENDA ​// CFG JavaScript 
 
 xx Game Run-through​
 
