@@ -1,9 +1,8 @@
-User
 // number of questions the player has to answer in the quiz - change this number to get a longer or shorter quiz!
-const numQuestionsInQuiz = 10;
+const numQuestionsInQuiz = 1;
 
 // time limit (in seconds) to answer each question in the quiz:
-const timeLimitPerQuestion = 10;
+const timeLimitPerQuestion = 1;
 
 // other variables
 let currentQuestionNumber;
