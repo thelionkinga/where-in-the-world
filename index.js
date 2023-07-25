@@ -146,12 +146,6 @@ function startTimer() {
     }, 1000)
 }
 
-// function to play a sound effect
-function playSound(sound) {
-    var soundEffect = new Audio("sounds/" + sound + ".mp3");
-    soundEffect.play();
-}
-
 
 // function nextQuestion adds 1 to current question number and displays next question
 
@@ -159,11 +153,12 @@ function nextQuestion() {
     currentQuestionNumber++;
     fadeOut(document.getElementById("question-container"), 500);
 
-    if (currentQuestionNumber <= numQuestionsInQuiz) {
-        pageContent = '<div id="question-container"><div id="timer"><i class="fa-solid fa-clock"></i> 10s</div><h1>Question ' + currentQuestionNumber + '</h1><h2>Where in the world is this?</h2><div id="photo-and-answers"><img class="question-photo" src="images/' + questions[currentQuestionNumber - 1].image + '"><button class="answer-button">' + questions[currentQuestionNumber - 1].options[0] + '</button><button class="answer-button">' + questions[currentQuestionNumber - 1].options[1] + '</button><button class="answer-button">' + questions[currentQuestionNumber - 1].options[2] + '</button><button class="answer-button">' + questions[currentQuestionNumber - 1].options[3] + '</button></div></div>';
+    if (currentQuestionNumber <= numQuestionsInQuiz){
+        pageContent = '<div id="question-container"><div id="timer"><i class="fa-solid fa-clock"></i> 10s</div><h1>Question ' + currentQuestionNumber + '</h1><h2>Where in the world is this?</h2><div id="photo-and-answers"><img class="question-photo" src="images/' + questions[currentQuestionNumber-1].image + '"><button class="answer-button">' + questions[currentQuestionNumber-1].options[0] + '</button><button class="answer-button">' + questions[currentQuestionNumber-1].options[1] + '</button><button class="answer-button">' + questions[currentQuestionNumber-1].options[2] + '</button><button class="answer-button">' + questions[currentQuestionNumber-1].options[3] + '</button></div></div>';
         setTimeout(showQuestion, 500);
         setTimeout(startTimer, 500);
-    } else {
+        }
+    else {
         let percentageScore = (score / numQuestionsInQuiz) * 100;
         let message;
         if (percentageScore === 100) {
@@ -175,12 +170,9 @@ function nextQuestion() {
         } else {
             message = "You can try again!";
         }
-
-        pageContent = '<div id="title-container"><h1 id="your-final-score">Your final score is ' + score + ' out of ' + numQuestionsInQuiz + '!</h1><h2>' + message + '<br><span id="final-page-title">Where in the World?</h2><button id="play-again">Play again!</button></div>';
-        setTimeout(showQuestion, 500);
-        }
-    }
-}
+      
+        pageContent = '<div id="title-container"><h1 id="your-final-score">'+ playerName + ', your final score is ' + score + ' out of ' + numQuestionsInQuiz + '!</h1><h2>Thank you for playing<br><span id="final-page-title">Where in the World?</h2><button id="play-again">Play again!</button></div>';
+      //  setTimeout(showQuestion, 500);   
       
         // Display the final score message on the final page
         document.getElementById("main-container").innerHTML = pageContent;
@@ -218,6 +210,12 @@ function resetQuiz() {
   startButton = document.getElementById("start-button");
   startButton.addEventListener("click", startQuiz);
 }
+
+      
+              // play "applause" sound effect if player has achieved full marks in the quiz
+        if (score==numQuestionsInQuiz){
+        setTimeout(function(){playSound("applause")}, 500)};  
+    }
 }
 
 
