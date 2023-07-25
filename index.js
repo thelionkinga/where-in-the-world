@@ -228,12 +228,14 @@ function showResult() {
     // if the correct answer was chosen:
     if (this.innerHTML == questions[currentQuestionNumber-1].country){
         rightOrWrong = `You got it right! <i class="fa-solid fa-face-smile"></i>`;
-        score++;
+        score++
+        setTimeout(function(){playSound("right")}, 500);
         }
 
      // if the wrong answer was chosen:
     else if (questions[currentQuestionNumber-1].options.includes(this.innerHTML)){
         rightOrWrong = `You got it wrong! <i class="fa-solid fa-face-frown"></i>`
+        setTimeout(function(){playSound("wrong")}, 500);
     }
 
     // if the time ran out:
