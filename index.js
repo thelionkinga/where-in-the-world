@@ -146,6 +146,12 @@ function startTimer() {
     }, 1000)
 }
 
+// function to play a sound effect
+function playSound(sound) {
+    var soundEffect = new Audio("sounds/" + sound + ".mp3");
+    soundEffect.play();
+}
+
 
 // function nextQuestion adds 1 to current question number and displays next question
 
@@ -172,12 +178,6 @@ function nextQuestion() {
 
         pageContent = '<div id="title-container"><h1 id="your-final-score">Your final score is ' + score + ' out of ' + numQuestionsInQuiz + '!</h1><h2>' + message + '<br><span id="final-page-title">Where in the World?</h2><button id="play-again">Play again!</button></div>';
         setTimeout(showQuestion, 500);
-
-        // play "applause" sound effect if player has achieved full marks in the quiz
-        if (score === numQuestionsInQuiz) {
-            setTimeout(function () {
-                playSound("applause");
-            }, 500);
         }
     }
 }
@@ -273,6 +273,5 @@ function showResult() {
            document.getElementById("next-question-button").addEventListener("click", nextQuestion);
         }, 500);
     }
-
 
 
